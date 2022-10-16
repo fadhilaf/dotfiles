@@ -87,7 +87,8 @@ M.on_attach = function(client, bufnr)
 
   -- matiin kemampuan formatting asli dari lsp, biar null-ls bae yg lgsg tepilih
 	if client.name == "tsserver" or client.name == "sumneko_lua" then
-		client.resolved_capabilities.document_formatting = false
+		--client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
 	end
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)

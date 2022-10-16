@@ -59,8 +59,8 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" })
 	use("folke/which-key.nvim")
 
-  use("ap/vim-css-color") -- untuk biar ado warno pas di css
-  use("tpope/vim-surround")
+  use({"ap/vim-css-color"}) -- untuk biar ado warno pas di css
+  use({"kylechui/nvim-surround"})
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" })
@@ -81,15 +81,14 @@ return packer.startup(function(use)
 	-- LSP
 	use({ "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }) -- enable LSP
 	use({ "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }) -- simple to use language server installer
-	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
+	use({ "jose-elias-alvarez/null-ls.nvim", commit = "b726c766bc98adc20aa2b02c3aa8c8ea63791145" }) -- for formatters and linters
   use({ "github/copilot.vim" })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
 
 	-- Treesitter
-	use("nvim-treesitter/nvim-treesitter")
-  use("nvim-treesitter/nvim-treesitter-refactor")
+	use({"nvim-treesitter/nvim-treesitter", commit = "5d11dfc27849e3d7435c32dbd8ea9be35bcd990b"})
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim", tag = "v0.5" })

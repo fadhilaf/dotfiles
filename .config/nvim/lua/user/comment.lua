@@ -7,11 +7,16 @@ comment.setup {
   pre_hook = function(ctx)
     local U = require "Comment.utils"
 
+    local status_utils_ok, utils = pcall(require, "ts_context_commentstring.utils")
+    if not status_utils_ok then
+      return
+    end
+
     local location = nil
     if ctx.ctype == U.ctype.block then
-      location = require("ts_context_commentstring.utils").get_cursor_location()
+      location = utils.get_cursor_location()
     elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-      location = require("ts_context_commentstring.utils").get_visual_start_location()
+      location = utils.get_visual_start_location()
     end
 
     return require("ts_context_commentstring.internal").calculate_commentstring {
